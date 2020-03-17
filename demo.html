@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>改变背景色</title>
+	<link rel="stylesheet" type="text/css" href="./css/demo.css">
+	<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+	<script type="text/javascript" src="./js/jquery.js"></script>
+</head>
+<body>
+
+	<div class="btn"><i class="fas fa-cog"></i></div>
+
+	<div class="box">
+		<h2>Enter a color</h2>
+		<div class="box-c">
+			<div class="txtb">
+				<input type="text" placeholder="#000000" id="hex">
+				<div class="prev"></div>
+			</div>
+			<button class="apply">Apply</button>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		$('.btn').click(function(){
+			$('.box').toggleClass('box-show');
+		});
+
+		$('#hex').keyup(function(){
+			$('.prev').css("background",$('#hex').val());
+		});
+
+		$('.apply').click(function(){
+			$('body').css("background",$('#hex').val());
+
+			$('.box').toggleClass('box-show');
+		})
+	</script>
+</body>
+</html>
